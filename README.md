@@ -48,39 +48,39 @@ The Acme Corp API service offers registered users access to a wide range of info
 
 Run RSpec tests to ensure functionality and reliability:
 
-    ```bash
-    bundle exec rspec
-    ```
+```bash
+bundle exec rspec
+```
 
-    ```bash
-    bundle exec rspec -f d
+```bash
+bundle exec rspec -f d
 
-    ApplicationController
-      #user_quota
-        creates the hit
-        creates the hit with an endpoint
-        increases the hits count
-        does not render an error
-        when user is over quota
-          renders an error
+ApplicationController
+  #user_quota
+    creates the hit
+    creates the hit with an endpoint
+    increases the hits count
+    does not render an error
+    when user is over quota
+      renders an error
 
-    User
-      #timezone
-        validates inclusion of timezone
-        allows blank timezone
-        allows valid timezone
-      #count_hits
-        counts hits for the current month
-        when user has no timezone
-          counts only the hits current month
-        when user has a timezone
-          counts only the hits current month in the user timezone
-          when the hits are created after the end of the month in UTC
-            when its the end of the month in the user timezone
-              counts the hits of the current month in the user timezone
-            when its the beginning of the month in the user timezone
-              counts the hits current month in the user timezone
-    ```
+User
+  #timezone
+    validates inclusion of timezone
+    allows blank timezone
+    allows valid timezone
+  #count_hits
+    counts hits for the current month
+    when user has no timezone
+      counts only the hits current month
+    when user has a timezone
+      counts only the hits current month in the user timezone
+      when the hits are created after the end of the month in UTC
+        when its the end of the month in the user timezone
+          counts the hits of the current month in the user timezone
+        when its the beginning of the month in the user timezone
+          counts the hits current month in the user timezone
+```
 
 ## Coverage
 
