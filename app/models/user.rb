@@ -4,7 +4,9 @@ class User < ApplicationRecord
     allow_blank: true
 
 	def count_hits
-		start = Time.now.beginning_of_month
-		hits.where('created_at > ?', start).count
+    Time.use_zone(timezone) do
+      start = Time.zone.now.beginning_of_month
+      hits.where('created_at > ?', start).count
+    end
   end
 end
