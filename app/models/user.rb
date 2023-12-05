@@ -3,7 +3,6 @@ class User < ApplicationRecord
 
 	def count_hits
 		start = Time.now.beginning_of_month
-		hits = hits.where('created_at > ?', start).count
-		return hits
+		hits.where('created_at > ?', start).count
   end
 end
