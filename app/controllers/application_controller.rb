@@ -1,10 +1,17 @@
-class ApplicationController < ActionController::API
-	before_filter :user_quota
+# frozen_string_literal: true
 
-	def user_quota
+class ApplicationController < ActionController::API
+  before_action :user_quota
+
+  def user_quota
     Hit.transaction do
       Hit.create(user: current_user, endpoint: request.path)
-      render json: { error: 'over quota' } if current_user.count_hits >= 10000
+      render json: { error: 'over quota' } if current_user.count_hits >= 10_000
     end
+  end
+
+  def current_user
+    # omitting authentication for simplicity
+    raise NotImplementedError
   end
 end
