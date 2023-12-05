@@ -107,4 +107,4 @@ bundle exec rubocop
 
 ## Contact
 
-For any questions , reach out to [m.viniteixeira@gmail.com](mailto:m.viniteixeira@gmail.com).
+For any questions, reach out to [m.viniteixeira@gmail.com](mailto:m.viniteixeira@gmail.com).
